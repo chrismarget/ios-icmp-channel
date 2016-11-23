@@ -128,10 +128,10 @@ while {$i < [string length $message]} {
   set b1 [format %02X $i]
   set b2 [format %02X [scan [string index $message $i] %c]]
   incr i
-  exec [concat "ping" $vrf_arg $target $int_arg "repeat 1 data" $b1$b2]
+  exec [concat "ping" $vrf_arg $target $int_arg "repeat 1 size 38 data" $b1$b2]
 }
 
 # Send EOM (ASCII 4) as the last ping.
 set b1 [format %02X $i]
 set b2 [format %02X 4]
-exec [concat "ping" $vrf_arg $target $int_arg "repeat 1 data" $b1$b2]
+exec [concat "ping" $vrf_arg $target $int_arg "repeat 1 size 38 data" $b1$b2]
