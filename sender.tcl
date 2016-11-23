@@ -36,17 +36,13 @@ proc get_ping_int_arg {i} {
 
 # Returns 1 if the cli arguments are okay, otherwise 0
 proc validate_cli_args {} {
-  global argc
   global argv
-  if {![llength $argv]} {
-    return 0
-  }
   if {[string range [lindex $argv 0] 0 0] == "-"} {
     set minargs 4
   } else {
     set minargs 2
   }
-  if {$argc < 4} {
+  if {[llength $argv] < $minargs} {
     return 0
   }
   return 1
@@ -115,7 +111,8 @@ if {[lindex $argv 0] == "-i"} {
   set message [lreplace $argv 0 2]
 # User specified no extra ping arguments
 } else {
-  set ping_options ""
+  set vrf_arg ""
+  set int_arg ""
   set target [lindex $argv 0]
   set message [lreplace $argv 0 0]
 }
