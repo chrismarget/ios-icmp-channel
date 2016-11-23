@@ -16,7 +16,7 @@ Router#<b>tclsh flash:sender.tcl target TEST</b>
 
 Produces echo requests that look like this:
 <pre>
-# <b>tcpdump -Xn icmp and src host target TEST</b>
+# tcpdump -Xn icmp and src host target TEST
 tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
 listening on eth0, link-type EN10MB (Ethernet), capture size 65535 bytes
 15:54:00.266732 IP sender &gt; target: ICMP echo request, id 305, seq 0, length 18
@@ -39,4 +39,4 @@ listening on eth0, link-type EN10MB (Ethernet), capture size 65535 bytes
 	0x0000:  4500 0026 01ab 0000 f201 1e2a xxxx xxxx  E..&.......*....
 	0x0010:  xxxx xxxx 0800 475c 0135 0000 0000 0000  ......G\.5......
 	0x0020:  b7d9 f390 0404 0000 0000 0000 0000       ..............
-<pre>
+</pre>
